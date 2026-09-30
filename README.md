@@ -1,4 +1,4 @@
-# AI Lead Intelligence & Supplier Copilot — Gemini Edition
+# AI Lead Intelligence & Supplier Copilot 
 
 A B2B AI prototype that converts unstructured buyer enquiries into structured requirements, scores lead quality, retrieves relevant catalogue products using embeddings/vector similarity, and generates a grounded supplier reply.
 
