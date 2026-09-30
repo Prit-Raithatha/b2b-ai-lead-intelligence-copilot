@@ -42,9 +42,6 @@ The terminal should show:
 ## Health check
 Open `http://localhost:3000/api/health`.
 
-## Suggested IndiaMART application description
-**AI Lead Intelligence & Supplier Copilot for B2B Marketplaces** — Built an AI-powered prototype that converts unstructured buyer enquiries into structured requirements, calculates explainable lead-priority scores, retrieves relevant catalogue products using Gemini embeddings and semantic vector similarity, and generates grounded supplier responses. Used Google Gemini for structured extraction/response generation, embeddings-based RAG, deterministic scoring, and a Node.js workflow; designed an n8n automation layer for high-priority lead routing.
-
 ## n8n automation workflow
 The included `n8n-b2b-lead-routing.json` implements the working automation:
 
