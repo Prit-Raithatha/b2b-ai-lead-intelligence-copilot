@@ -9,7 +9,7 @@ A B2B AI prototype that converts unstructured buyer enquiries into structured re
 - Deterministic business rules — explainable lead score
 - Node.js — backend/API
 - HTML/CSS/JavaScript — frontend
-- n8n (next layer) — workflow automation
+- n8n — workflow automation
 
 ## Run locally on Windows PowerShell
 
