@@ -3,7 +3,7 @@
 A B2B AI prototype that converts unstructured buyer enquiries into structured requirements, scores lead quality, retrieves relevant catalogue products using embeddings/vector similarity, and generates a grounded supplier reply.
 
 ## AI stack
-- Google Gemini 2.5 Flash-Lite — structured extraction + grounded response generation
+- Google Gemini 3.5 Flash-Lite — structured extraction + grounded response generation
 - Gemini Embedding 001 — text embeddings
 - Cosine similarity — vector retrieval over the local product catalogue
 - Deterministic business rules — explainable lead score
@@ -22,7 +22,7 @@ Open `http://localhost:3000`.
 
 The terminal should show:
 
-`AI_RAG mode enabled with gemini-2.5-flash-lite + gemini-embedding-001.`
+`AI_RAG mode enabled with gemini-3.5-flash-lite + gemini-embedding-001.`
 
 ## What happens when Analyze Lead is clicked
 1. Gemini extracts structured buyer requirements as JSON.
@@ -45,5 +45,13 @@ Open `http://localhost:3000/api/health`.
 ## Suggested IndiaMART application description
 **AI Lead Intelligence & Supplier Copilot for B2B Marketplaces** — Built an AI-powered prototype that converts unstructured buyer enquiries into structured requirements, calculates explainable lead-priority scores, retrieves relevant catalogue products using Gemini embeddings and semantic vector similarity, and generates grounded supplier responses. Used Google Gemini for structured extraction/response generation, embeddings-based RAG, deterministic scoring, and a Node.js workflow; designed an n8n automation layer for high-priority lead routing.
 
-## Next: n8n
-Webhook → AI Lead Copilot API → IF priority=HIGH → priority workflow / normal queue.
+## n8n automation workflow
+The included `n8n-b2b-lead-routing.json` implements the working automation:
+
+Buyer Enquiry
+→ n8n Webhook
+→ Gemini + RAG Lead Analysis
+→ Lead Score >= 75?
+→ Priority Sales Queue / Normal Lead Queue
+
+High-priority leads are routed to `PRIORITY_SALES_QUEUE` with an immediate follow-up recommendation. Lower-scoring leads are routed to `NORMAL_QUEUE` with the standard follow-up SLA.
