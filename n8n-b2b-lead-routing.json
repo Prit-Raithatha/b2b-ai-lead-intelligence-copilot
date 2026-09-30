@@ -1,0 +1,202 @@
+{
+  "name": "B2B AI Lead Qualification & Routing",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "b2b-lead",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "05061add-0493-4632-95d4-e0d755ecc15f",
+      "name": "New Buyer Enquiry",
+      "webhookId": "43aa3bd4-f1af-4e6d-a8e4-a95a7f498cea"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3000/api/analyze",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "enquiry",
+              "value": "={{$json.body.enquiry}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "15b07795-f6ba-4a0f-a735-fcd7d3b55836",
+      "name": "Analyze Lead with Gemini + RAG"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "4b7193c3-e7a5-486c-86bf-b16699c0f3cd",
+              "leftValue": "={{$json.lead.score}}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        416,
+        0
+      ],
+      "id": "d1d305fe-6dee-4aab-b59e-351514a3b63e",
+      "name": "High Priority Lead?"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "95a4f3b6-6a92-48b4-ad8f-2cf2b1d1d462",
+              "name": "routing_status",
+              "value": "PRIORITY_SALES_QUEUE",
+              "type": "string"
+            },
+            {
+              "id": "fcaa94d7-e668-4937-b2b2-db62358410ba",
+              "name": "action",
+              "value": "Immediate supplier follow-up recommended",
+              "type": "string"
+            },
+            {
+              "id": "63bc9a32-184b-4292-a8c4-1c9050cba6db",
+              "name": "sla",
+              "value": "Respond within 15 minutes",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        624,
+        -96
+      ],
+      "id": "6eb85d87-5b7d-4789-b8bf-50c93d88be5c",
+      "name": "Priority Sales Queue"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1988ff2-c6d5-41d6-82d4-67f8613c5259",
+              "name": "routing_status",
+              "value": "NORMAL_QUEUE",
+              "type": "string"
+            },
+            {
+              "id": "57161b3e-d0d5-4711-a091-f630bb78f8fe",
+              "name": "action",
+              "value": "Standard supplier follow-up",
+              "type": "string"
+            },
+            {
+              "id": "898566d7-bfd8-425d-a198-bae813247fa0",
+              "name": "sla",
+              "value": "Respond within standard SLA",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        624,
+        96
+      ],
+      "id": "6ef0a8cd-b88a-46e3-b332-f1cd11e1778e",
+      "name": "Normal Lead Queue"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "New Buyer Enquiry": {
+      "main": [
+        [
+          {
+            "node": "Analyze Lead with Gemini + RAG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Lead with Gemini + RAG": {
+      "main": [
+        [
+          {
+            "node": "High Priority Lead?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "High Priority Lead?": {
+      "main": [
+        [
+          {
+            "node": "Priority Sales Queue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Normal Lead Queue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3c861098-bdc8-4c4e-9dc6-3b1e287bb469",
+  "meta": {
+    "instanceId": "4055618202b744a3b531c121904654ac8f1770570718a4a5d026445b1822f722"
+  },
+  "id": "2Nu9aG8VRCXjW1Gr",
+  "tags": []
+}

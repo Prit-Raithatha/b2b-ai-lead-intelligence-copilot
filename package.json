@@ -1,0 +1,12 @@
+{
+  "name": "ai-lead-intelligence-supplier-copilot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "B2B AI lead intelligence prototype using LLM extraction, embeddings-based retrieval, deterministic lead scoring and grounded response generation.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

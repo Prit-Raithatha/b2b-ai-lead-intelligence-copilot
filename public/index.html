@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>AI Lead Intelligence & Supplier Copilot</title>
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">B2B AI PRODUCT PROTOTYPE</div>
+      <h1>AI Lead Intelligence & Supplier Copilot</h1>
+      <p>Turn unstructured buyer enquiries into structured requirements, lead priority, catalogue matches and grounded replies.</p>
+    </div>
+    <div class="badge" id="modeBadge">Ready</div>
+  </header>
+
+  <main class="grid">
+    <section class="card input-card">
+      <div class="section-title">
+        <span>1</span>
+        <div><h2>Buyer enquiry</h2><p>Paste a natural-language B2B requirement.</p></div>
+      </div>
+      <textarea id="enquiry">Need 500 metres premium blackout curtain fabric for a hotel in Dwarka. Beige or cream preferred. Delivery within 15 days.</textarea>
+      <div class="examples">
+        <button class="chip" data-text="Need 500 metres premium blackout curtain fabric for a hotel in Dwarka. Beige or cream preferred. Delivery within 15 days.">Hotel lead</button>
+        <button class="chip" data-text="Looking for low-cost grey blackout curtain fabric, around 1200 metres, for a budget hotel project in Jaipur.">Bulk budget lead</button>
+        <button class="chip" data-text="Need curtains for rooms. Please send options.">Vague lead</button>
+      </div>
+      <button id="analyzeBtn" class="primary">Analyze lead</button>
+      <div id="error" class="error"></div>
+    </section>
+
+    <section class="card score-card">
+      <div class="section-title">
+        <span>2</span>
+        <div><h2>Lead priority</h2><p>Deterministic score from extracted buying signals.</p></div>
+      </div>
+      <div class="score-wrap">
+        <div class="score" id="score">--</div>
+        <div>
+          <div class="priority" id="priority">Waiting</div>
+          <ul id="reasons"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card requirements-card">
+      <div class="section-title">
+        <span>3</span>
+        <div><h2>Structured requirement</h2><p>LLM extraction with unknown fields left blank.</p></div>
+      </div>
+      <div id="requirements" class="kv-grid empty">Run an analysis to see extracted fields.</div>
+    </section>
+
+    <section class="card products-card">
+      <div class="section-title">
+        <span>4</span>
+        <div><h2>RAG catalogue matches</h2><p>Top products retrieved from the supplier catalogue.</p></div>
+      </div>
+      <div id="products" class="product-list empty">No products retrieved yet.</div>
+    </section>
+
+    <section class="card response-card">
+      <div class="section-title">
+        <span>5</span>
+        <div><h2>Grounded supplier response</h2><p>Generated only from buyer input + retrieved catalogue facts.</p></div>
+      </div>
+      <div id="reply" class="reply empty">The suggested response will appear here.</div>
+      <button id="copyBtn" class="secondary" disabled>Copy response</button>
+    </section>
+
+    <section class="card architecture-card">
+      <h2>How it works</h2>
+      <div class="flow">
+        <div>Buyer enquiry</div><b>→</b>
+        <div>LLM extraction</div><b>→</b>
+        <div>Rule-based score</div><b>→</b>
+        <div>Embeddings</div><b>→</b>
+        <div>Vector similarity</div><b>→</b>
+        <div>Grounded reply</div>
+      </div>
+      <p class="small">Design choice: the LLM understands the enquiry; deterministic business rules calculate the lead score; retrieval grounds product recommendations to reduce hallucination.</p>
+    </section>
+  </main>
+
+  <footer>
+    Prototype built to demonstrate AI product thinking: structured prompting, embeddings, semantic retrieval, RAG, hallucination control and explainable lead scoring.
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

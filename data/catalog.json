@@ -1,0 +1,221 @@
+[
+  {
+    "id": "P001",
+    "name": "HotelShield Blackout 300",
+    "category": "Curtain Fabric",
+    "type": "Blackout",
+    "material": "Polyester",
+    "colors": [
+      "Beige",
+      "Cream",
+      "Grey"
+    ],
+    "opacity": "99%",
+    "width": "54 inches",
+    "price_per_m": 430,
+    "moq_m": 100,
+    "use_cases": [
+      "Hotels",
+      "Bedrooms",
+      "Conference rooms"
+    ],
+    "description": "Premium 99% blackout polyester curtain fabric for hotels and commercial interiors. Available in beige, cream and grey."
+  },
+  {
+    "id": "P002",
+    "name": "Royal Blackout 420",
+    "category": "Curtain Fabric",
+    "type": "Blackout",
+    "material": "Polyester",
+    "colors": [
+      "Beige",
+      "Royal Blue",
+      "Charcoal"
+    ],
+    "opacity": "99%",
+    "width": "54 inches",
+    "price_per_m": 480,
+    "moq_m": 120,
+    "use_cases": [
+      "Hotels",
+      "Premium residences"
+    ],
+    "description": "Heavy premium blackout fabric with 99% opacity for hospitality projects and premium residential interiors."
+  },
+  {
+    "id": "P003",
+    "name": "LuxeGuard Blackout FR",
+    "category": "Curtain Fabric",
+    "type": "Blackout",
+    "material": "Polyester FR",
+    "colors": [
+      "Ivory",
+      "Sand",
+      "Grey"
+    ],
+    "opacity": "98%",
+    "width": "56 inches",
+    "price_per_m": 620,
+    "moq_m": 150,
+    "use_cases": [
+      "Hotels",
+      "Auditoriums",
+      "Commercial projects"
+    ],
+    "description": "Fire-retardant premium blackout curtain fabric for hospitality and commercial projects requiring higher safety specifications."
+  },
+  {
+    "id": "P004",
+    "name": "Coastal Linen Sheer",
+    "category": "Curtain Fabric",
+    "type": "Sheer",
+    "material": "Polyester linen-look",
+    "colors": [
+      "Off White",
+      "Sea Green",
+      "Beige"
+    ],
+    "opacity": "Sheer",
+    "width": "54 inches",
+    "price_per_m": 260,
+    "moq_m": 80,
+    "use_cases": [
+      "Hotels",
+      "Living rooms",
+      "Sea-facing rooms"
+    ],
+    "description": "Soft linen-look sheer curtain fabric suitable for hotels, living rooms and layered window treatments."
+  },
+  {
+    "id": "P005",
+    "name": "Executive Ivory Dimout",
+    "category": "Curtain Fabric",
+    "type": "Dimout",
+    "material": "Polyester",
+    "colors": [
+      "Ivory",
+      "Cream",
+      "Taupe"
+    ],
+    "opacity": "85%",
+    "width": "54 inches",
+    "price_per_m": 350,
+    "moq_m": 100,
+    "use_cases": [
+      "Hotels",
+      "Offices",
+      "Guest rooms"
+    ],
+    "description": "Elegant dimout curtain fabric for executive hotel rooms, offices and guest rooms where soft light reduction is preferred."
+  },
+  {
+    "id": "P006",
+    "name": "Temple Calm Saffron Accent",
+    "category": "Curtain Fabric",
+    "type": "Decorative",
+    "material": "Polyester blend",
+    "colors": [
+      "Off White",
+      "Saffron",
+      "Gold"
+    ],
+    "opacity": "60%",
+    "width": "54 inches",
+    "price_per_m": 390,
+    "moq_m": 80,
+    "use_cases": [
+      "Hotels",
+      "Pilgrimage hospitality",
+      "Decorative interiors"
+    ],
+    "description": "Decorative hospitality curtain fabric with off-white and saffron tones for warm, culturally inspired interiors."
+  },
+  {
+    "id": "P007",
+    "name": "BudgetBlock 210",
+    "category": "Curtain Fabric",
+    "type": "Blackout",
+    "material": "Polyester",
+    "colors": [
+      "Brown",
+      "Beige",
+      "Grey"
+    ],
+    "opacity": "95%",
+    "width": "54 inches",
+    "price_per_m": 290,
+    "moq_m": 200,
+    "use_cases": [
+      "Budget hotels",
+      "Hostels",
+      "Bulk projects"
+    ],
+    "description": "Cost-effective blackout fabric designed for high-volume hospitality and institutional projects."
+  },
+  {
+    "id": "P008",
+    "name": "Velvet Royale 700",
+    "category": "Curtain Fabric",
+    "type": "Decorative Blackout",
+    "material": "Velvet polyester",
+    "colors": [
+      "Navy",
+      "Maroon",
+      "Emerald"
+    ],
+    "opacity": "97%",
+    "width": "54 inches",
+    "price_per_m": 780,
+    "moq_m": 60,
+    "use_cases": [
+      "Suites",
+      "Luxury hotels",
+      "Banquet halls"
+    ],
+    "description": "Luxury velvet-look decorative blackout fabric for premium suites, banquet halls and high-end hospitality."
+  },
+  {
+    "id": "P009",
+    "name": "EasyCare Hospital Curtain",
+    "category": "Curtain Fabric",
+    "type": "Privacy",
+    "material": "Treated polyester",
+    "colors": [
+      "Mint",
+      "Sky Blue",
+      "White"
+    ],
+    "opacity": "90%",
+    "width": "60 inches",
+    "price_per_m": 410,
+    "moq_m": 150,
+    "use_cases": [
+      "Hospitals",
+      "Clinics",
+      "Healthcare"
+    ],
+    "description": "Easy-care privacy curtain fabric for healthcare environments, designed for frequent cleaning and institutional use."
+  },
+  {
+    "id": "P010",
+    "name": "OfficeScreen Dimout 250",
+    "category": "Curtain Fabric",
+    "type": "Dimout",
+    "material": "Polyester",
+    "colors": [
+      "Grey",
+      "Blue Grey",
+      "Beige"
+    ],
+    "opacity": "80%",
+    "width": "54 inches",
+    "price_per_m": 315,
+    "moq_m": 100,
+    "use_cases": [
+      "Offices",
+      "Meeting rooms",
+      "Commercial spaces"
+    ],
+    "description": "Professional dimout curtain fabric for offices, meeting rooms and commercial interiors."
+  }
+]
